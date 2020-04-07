@@ -34,4 +34,7 @@ edit angular.json and add
 "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
 edit package.json
-"start": "ng serve --port 4801 --host 127.0.0.1",              
+"start": "ng serve --port 4801 --host 127.0.0.1",
+
+use angular augury 
+https://augury.rangle.io/              
