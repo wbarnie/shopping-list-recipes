@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Router } from '@angular/router';
-import { catchError, tap } from 'rxjs/operators';
-import { throwError, BehaviorSubject } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {Router} from '@angular/router';
+import {catchError, tap} from 'rxjs/operators';
+import {throwError, BehaviorSubject} from 'rxjs';
 
-import { User } from './user.model';
+import {User} from './user.model';
 
 export interface AuthResponseData {
   kind: string;
@@ -16,14 +16,15 @@ export interface AuthResponseData {
   registered?: boolean;
 }
 
-@Injectable({ providedIn: 'root' })
+@Injectable({providedIn: 'root'})
 export class AuthService {
   user = new BehaviorSubject<User>(null);
   private tokenExpirationTimer: any;
   urlNewUser = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyBhg2MtOSg7rA5qCN3t8eHOa6hOKnJXgcw';
   urllogin = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyBhg2MtOSg7rA5qCN3t8eHOa6hOKnJXgcw';
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) {
+  }
 
   signup(email: string, password: string) {
     return this.http

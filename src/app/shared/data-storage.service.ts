@@ -8,7 +8,7 @@ import { AuthService } from '../auth/auth.service';
 
 @Injectable({ providedIn: 'root' })
 export class DataStorageService {
-  url =    'https://ng-course-recipe-book-e5daf.firebaseio.com/recipes.json';
+  url = 'https://ng-course-recipe-book-e5daf.firebaseio.com/recipes.json';
   constructor(
     private http: HttpClient,
     private recipeService: RecipeService,
